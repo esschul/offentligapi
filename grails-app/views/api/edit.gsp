@@ -8,12 +8,11 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${resource(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Api List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New Api</g:link></span>
+            <span class="menuButton"><g:link class="list" action="list">Api Liste</g:link></span>
+            <span class="menuButton"><g:link class="create" action="create">Nytt Api</g:link></span>
         </div>
         <div class="body">
-            <h1>Edit Api</h1>
+            <h1>Rediger Api</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -28,6 +27,24 @@
                 <div class="dialog">
                     <table>
                         <tbody>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="dataeier">Dataeier:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:apiInstance,field:'dataeier','errors')}">
+                                <input type="text" id="dataeier" name="dataeier" value="${fieldValue(bean:apiInstance,field:'dataeier')}"/>
+                            </td>
+                        </tr> 
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="beskrivelse">Beskrivelse:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:apiInstance,field:'beskrivelse','errors')}">
+                                <textarea id="beskrivelse" name="beskrivelse" value="${fieldValue(bean:apiInstance,field:'beskrivelse')}"></textarea>
+                            </td>
+                        </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -38,23 +55,6 @@
                                 </td>
                             </tr> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="beskrivelse">Beskrivelse:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:apiInstance,field:'beskrivelse','errors')}">
-                                    <input type="text" id="beskrivelse" name="beskrivelse" value="${fieldValue(bean:apiInstance,field:'beskrivelse')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="dataeier">Dataeier:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:apiInstance,field:'dataeier','errors')}">
-                                    <input type="text" id="dataeier" name="dataeier" value="${fieldValue(bean:apiInstance,field:'dataeier')}"/>
-                                </td>
-                            </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
